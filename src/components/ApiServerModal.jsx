@@ -4,7 +4,7 @@ import { X, Server, CheckCircle2, AlertCircle } from "lucide-react";
 const PRESET_URLS = [
   {
     label: "AWS Deployed API (ticket-api.pitadcloud.com)",
-    url: "https://ticket-api.pitadcloud.com/api",
+    url: "https://task-tracking-api-production.up.railway.app/api",
   },
   {
     label: "Local Development Server (localhost:5000)",
@@ -44,10 +44,11 @@ export default function ApiServerModal({
         </div>
 
         <div
-          className={`p-3 rounded-xl border text-xs flex items-center gap-2.5 ${health.status === "online"
+          className={`p-3 rounded-xl border text-xs flex items-center gap-2.5 ${
+            health.status === "online"
               ? "bg-emerald-950/50 border-emerald-800/80 text-emerald-200"
               : "bg-rose-950/50 border-rose-800/80 text-rose-200"
-            }`}
+          }`}
         >
           {health.status === "online" ? (
             <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
@@ -73,10 +74,11 @@ export default function ApiServerModal({
                   key={preset.url}
                   type="button"
                   onClick={() => setUrl(preset.url)}
-                  className={`w-full text-left px-3 py-2 rounded-xl border text-xs transition cursor-pointer ${url === preset.url
+                  className={`w-full text-left px-3 py-2 rounded-xl border text-xs transition cursor-pointer ${
+                    url === preset.url
                       ? "bg-indigo-600/20 border-indigo-500 text-white"
                       : "bg-slate-950 border-slate-800 text-slate-300 hover:border-slate-700"
-                    }`}
+                  }`}
                 >
                   <div className="font-medium">{preset.label}</div>
                   <div className="font-mono text-[11px] text-slate-400">
@@ -96,7 +98,7 @@ export default function ApiServerModal({
               required
               value={url}
               onChange={(e) => setUrl(e.target.value)}
-              placeholder="https://ticket-api.pitadcloud.com/api"
+              placeholder="https://task-tracking-api-production.up.railway.app/api"
               className="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-white focus:outline-none focus:border-indigo-500"
             />
           </div>

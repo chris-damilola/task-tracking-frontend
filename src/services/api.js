@@ -1,9 +1,10 @@
 const DEFAULT_API_URL =
-  import.meta.env.VITE_API_URL || "https://ticket-api.pitadcloud.com/api";
+  import.meta.env.VITE_API_URL ||
+  "https://task-tracking-api-production.up.railway.app/api";
 
 export const getApiBaseUrl = () => {
   const saved = localStorage.getItem("task_api_base_url");
-  if (saved && saved.includes("ticet-api")) {
+  if (saved && saved.includes("ticket-api")) {
     localStorage.removeItem("task_api_base_url");
     return DEFAULT_API_URL.replace(/\/+$/, "");
   }
