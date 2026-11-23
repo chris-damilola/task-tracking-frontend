@@ -3,7 +3,7 @@ import { X, Server, CheckCircle2, AlertCircle } from "lucide-react";
 
 const PRESET_URLS = [
   {
-    label: "AWS Deployed API ",
+    label: "Deployed API ",
     url: "https://task-tracking-api-production.up.railway.app/api",
   },
   {
